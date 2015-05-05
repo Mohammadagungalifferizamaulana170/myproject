@@ -19,12 +19,11 @@ public class Ruang_ukm extends ruangkelas{
         
         @Override
 	public void input_identitas_ruang_kelas() {
-		System.out.println("input ruang kelas");
+		System.out.println("input ruang  :");
 		setNama_ruang(in.next());
-		System.out.println("input lokasi ruang kelas");
+		System.out.println("input lokasi ruang :");
 		setLokasi_ruang(in.next());
-		System.out.println("pilih fakultas");
-		setFakultas(in.next());
+		
 	}
 
 	public void input_kondisi_ruang_kelas() {
@@ -82,7 +81,8 @@ public class Ruang_ukm extends ruangkelas{
             return hasil ;
 	}
 
-	public void kondisi_dan_posisi_sarana() {
+       
+	public String kondisi_dan_posisi_sarana() {
 		System.out.println("masukan jumlah steker atau stop kontak");
 		setJumlah_steker(in.nextInt());
                 for(i=0;i>getJumlah_steker();i++){
@@ -92,6 +92,7 @@ public class Ruang_ukm extends ruangkelas{
                     if (getKondisi_steker().equalsIgnoreCase("baik")){
                         steker++;
                     }
+                    return hasil;
                 }
 		System.out.println("posisi steker \n1. Di pojok Ruang dan di dekat dosen n\2. Di pojok ruang n\3. dekat dosen  ");
 		setPosisi_steker(in.next());
@@ -160,6 +161,7 @@ public class Ruang_ukm extends ruangkelas{
 		analisis_CCTV();
                 }
                 }
+                return hasil;
         }
 	public String analisis_kelistrikan() {
             if (getPosisi_steker().equalsIgnoreCase("1") && getJumlah_steker() >=4 && steker==4){

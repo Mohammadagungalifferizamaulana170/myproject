@@ -81,7 +81,7 @@ public abstract class ruangkelas extends ruang{
             return hasil ;
 	}
 
-	public void kondisi_dan_posisi_sarana() {
+	public String kondisi_dan_posisi_sarana() {
 		System.out.println("masukan jumlah steker atau stop kontak");
 		setJumlah_steker(in.nextInt());
                 for(i=0;i>getJumlah_steker();i++){
@@ -159,6 +159,7 @@ public abstract class ruangkelas extends ruang{
 		analisis_CCTV();
                 }
                 }
+                return hasil;
         }
 	public String analisis_kelistrikan() {
             if (getPosisi_steker().equalsIgnoreCase("1") && getJumlah_steker() >=4 && steker==4){
