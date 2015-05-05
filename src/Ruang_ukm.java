@@ -15,8 +15,7 @@ public class Ruang_ukm extends ruangkelas{
     
    
 	//ruang ambil = new ruang();
-        int i,r,LCD=0,AC=0,lampu=0, kipas=0,steker=0,CCTV=0;
-        String hasil;
+        
         
         @Override
 	public void input_identitas_ruang_kelas() {

@@ -7,7 +7,14 @@ import java.util.Scanner;
 public abstract class ruangkelas extends ruang{
 	Scanner in = new Scanner(System.in);
 	//ruang ambil = new ruang();
-        int i,r,LCD=0,AC=0,lampu=0, kipas=0,steker=0,CCTV=0;
+        int i;
+        int r;
+        int LCD=0;
+        int AC=0;
+        int lampu=0; 
+        int kipas=0;
+        int steker=0; 
+        int CCTV=0;
         String hasil;
 
 	public void input_identitas_ruang_kelas() {
@@ -397,6 +404,6 @@ public abstract class ruangkelas extends ruang{
             System.out.println("jumlah pintu : "+super.getJumlah_pintu());
             System.out.println("jumlah jendela :"+super.getJumlah_jendela());
             System.out.println("analisis pintu dan jendela : "+this.analisis_pintu_dan_jendela());
-            System.out.println("");
+            
         }
 }
