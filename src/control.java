@@ -5,7 +5,7 @@ import java.util.Scanner;
 public abstract class control extends IO {
     
     
-    superclass ru = new superclass() {};
+    setget ru = new setget() {};
     Scanner in = new Scanner(System.in);
     String hasil;
     int i;

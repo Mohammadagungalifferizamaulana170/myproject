@@ -1,6 +1,6 @@
 
 
-public abstract class superclass {
+public abstract class setget {
     private String nama_ruang;
     private String lokasi_ruang;
     private String fakultas;
@@ -53,7 +53,7 @@ public abstract class superclass {
         this.nama_ruang = nama_ruang;
     }
 
-    public void setLokasi_ruang(String lokasi_ruang) {
+   public void setLokasi_ruang(String lokasi_ruang) {
       this.lokasi_ruang = lokasi_ruang;
     }
 
@@ -406,11 +406,11 @@ public abstract class superclass {
     public int getJumlah_kunci() {
         return jumlah_kunci;
     }
-    void setdata (String nama_ruang, String lokasi_ruang, String fakultas){
-        this.nama_ruang = nama_ruang;
-        this.lokasi_ruang=lokasi_ruang;
-        this.fakultas=fakultas;
-    }
+   // void setdata (String nama_ruang, String lokasi_ruang, String fakultas){
+     //   this.nama_ruang = nama_ruang;
+       // this.lokasi_ruang=lokasi_ruang;
+       // this.fakultas=fakultas;
+    //}
     
    void setdata(int panjang_ruang, int lebar_ruang, int jumlah_kursi, int pintu, int jendela){
         this.panjang_ruang= panjang_ruang;
@@ -471,7 +471,7 @@ public abstract class superclass {
         this.bahaya=bahaya;
     }
     
-    public superclass(){
+    public setget(){
     }
    
 }

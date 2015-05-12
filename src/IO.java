@@ -1,9 +1,9 @@
 
 
 import java.util.Scanner;
-public abstract class IO extends superclass  {
+public abstract class IO extends supersuperclass {
     Scanner in = new Scanner(System.in);
-    superclass d;
+    setget d;
     int i;
     int r;
     int LCD=0;
@@ -13,21 +13,10 @@ public abstract class IO extends superclass  {
     int steker=0;
     int CCTV=0;
     
-    void input_identitas_ruang_kelas(String nama_ruang, String lokasi_ruang, String fakultas) {
-		System.out.println("input ruang kelas");
-		nama_ruang= in.next();
-		System.out.println("input lokasi ruang kelas");
-		lokasi_ruang=in.next();
-		System.out.println("pilih fakultas");
-		fakultas=in.next();
-    }
     
-    @Override
-    void setdata (String nama_ruang, String lokasi_ruang, String fakultas){
-    super.setdata(nama_ruang, lokasi_ruang, fakultas);
-    }
     public void input_kondisi_ruang_kelas(int panjang_ruang, int lebar_ruang, int jumlah_kursi, int pintu, int jendela) {
-		System.out.println("masukan panjang");
+		super.input_identitas_ruang_kelas();
+                System.out.println("masukan panjang");
 		panjang_ruang = in.nextInt();
 		System.out.println("masukan lebar");
 		lebar_ruang = in.nextInt();
@@ -38,10 +27,8 @@ public abstract class IO extends superclass  {
 		System.out.println("masukan jumlah jendela");
 		jendela = in.nextInt();
 	}
-    @Override
-    void setdata(int panjang_ruang, int lebar_ruang, int jumlah_kursi, int pintu, int jendela){
-    setdata(panjang_ruang, lebar_ruang, jumlah_kursi, pintu, jendela);
-    }
+    
+   
     public void kondisi_dan_posisi_sarana(int jumlah_steker, String kondisi_steker, String posisi_steker, int jumlah_kabel_LCD, 
                 String kondisi_kabel_LCD, String posisi_kabel_LCD, int jumlah_lampu,String kondisi_lampu ,
                 String posisi_lampu, int jumlah_kipas_angin, String kondisi_kipas_angin, String posisi_kipas_angin,
@@ -133,7 +120,8 @@ public abstract class IO extends superclass  {
             setdata(jumlah_steker, kondisi_steker, posisi_steker, jumlah_kabel_LCD, kondisi_kabel_LCD, posisi_kabel_LCD, jumlah_lampu, kondisi_lampu, posisi_lampu, jumlah_kipas_angin, kondisi_kipas_angin, posisi_kipas_angin, jumlah_AC, kondisi_AC, posisi_AC, SSID, bandwidth, jumlah_CCTV, kondisi_CCTV, posisi_CCTV);
             }
     public void input_lingkungan_ruang_kelas(String kondisi_lantai, String kondisi_dinding, String kondisi_atap, String kondisi_pintu, String kondisi_jendela) {
-		System.out.println("kondisi lantai");
+		super.input_identitas_ruang_kelas();
+                System.out.println("kondisi lantai");
 		kondisi_lantai = in.next();
 		System.out.println("kondisi dinding");
 		kondisi_dinding = in.next();
@@ -144,12 +132,11 @@ public abstract class IO extends superclass  {
 		System.out.println("kondisi jendela");
 		kondisi_jendela = in.next();
 	}
-    @Override
-    void setdata(String kondisi_lantai, String kondisi_dinding, String kondisi_atap, String kondisi_pintu, String kondisi_jendela){
-    setdata(kondisi_lantai, kondisi_dinding, kondisi_atap, kondisi_pintu, kondisi_jendela);
-    }
+    
+    
     public void kebersihan_ruang_kelas(String sirkulasi_udara, int pencahayaan, int kelembapan, int suhu) {
-		System.out.println("masukan sirkulasi udara");
+		super.input_identitas_ruang_kelas();
+                System.out.println("masukan sirkulasi udara");
 		sirkulasi_udara = in.nextLine();
 		System.out.println("masukan nilai pencahaan");
 		pencahayaan = in.nextInt();
@@ -158,12 +145,11 @@ public abstract class IO extends superclass  {
 		System.out.println("Masukan suhu Celcius");
 		suhu = in.nextInt();
 	}
-    @Override
-    void setdata (String sirkulasi_udara, int pencahayaan, int kelembapan, int suhu){
-    setdata(sirkulasi_udara, pencahayaan, kelembapan, suhu);  
-    }
+    
+   
     public void kenyamanan_ruang_kelas(int kebisingan, String bau, String kebocoran, String kerusakan, String keausan) {
-		System.out.println("masukan kebisingan");
+		super.input_identitas_ruang_kelas();
+                System.out.println("masukan kebisingan");
 		kebisingan = in.nextInt();
 		System.out.println("masukan bau");
 		bau = in.nextLine();
@@ -176,12 +162,11 @@ public abstract class IO extends superclass  {
 	}
     
     
-    @Override
-    void setdata (int kebisingan, String bau, String kebocoran, String kerusakan, String keausan){
-    setdata(kebisingan, bau, kebocoran, kerusakan, keausan);
-    }
+   
+  
     public void keamanan_ruang(String kekokohan, int jumlah_kunci, int jumlah_jendela, String bahaya) {
-		System.out.println("input kekokohan");
+		super.input_identitas_ruang_kelas();
+                System.out.println("input kekokohan");
 		kekokohan=in.next();
 		System.out.println("jumlah kunci pintu");
 		jumlah_kunci=in.nextInt();
@@ -196,6 +181,7 @@ public abstract class IO extends superclass  {
     
     
     public void tampil (){
+            
             System.out.println("ruang : "+d.getNama_ruang());
             System.out.println("lokasi : "+d.getLokasi_ruang());
             System.out.println("fakultas : "+d.getFakultas());
@@ -206,7 +192,7 @@ public abstract class IO extends superclass  {
             System.out.println("jumlah jendela :"+d.getJumlah_jendela());
         
         }
-    public superclass getruang(){
+    public setget getruang(){
             return d;
         }
     
