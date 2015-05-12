@@ -28,7 +28,9 @@ public abstract class IO extends supersuperclass {
 		jendela = in.nextInt();
 	}
     
-   
+    void setdata(int panjang_ruang, int lebar_ruang, int jumlah_kursi, int pintu, int jendela){
+    setdata(panjang_ruang, lebar_ruang, jumlah_kursi, pintu, jendela);
+    }
     public void kondisi_dan_posisi_sarana(int jumlah_steker, String kondisi_steker, String posisi_steker, int jumlah_kabel_LCD, 
                 String kondisi_kabel_LCD, String posisi_kabel_LCD, int jumlah_lampu,String kondisi_lampu ,
                 String posisi_lampu, int jumlah_kipas_angin, String kondisi_kipas_angin, String posisi_kipas_angin,
@@ -133,7 +135,9 @@ public abstract class IO extends supersuperclass {
 		kondisi_jendela = in.next();
 	}
     
-    
+    void setdata(String kondisi_lantai, String kondisi_dinding, String kondisi_atap, String kondisi_pintu, String kondisi_jendela){
+    setdata(kondisi_lantai, kondisi_dinding, kondisi_atap, kondisi_pintu, kondisi_jendela);
+    }
     public void kebersihan_ruang_kelas(String sirkulasi_udara, int pencahayaan, int kelembapan, int suhu) {
 		super.input_identitas_ruang_kelas();
                 System.out.println("masukan sirkulasi udara");
@@ -146,7 +150,9 @@ public abstract class IO extends supersuperclass {
 		suhu = in.nextInt();
 	}
     
-   
+    void setdata (String sirkulasi_udara, int pencahayaan, int kelembapan, int suhu){
+    setdata(sirkulasi_udara, pencahayaan, kelembapan, suhu);  
+    }
     public void kenyamanan_ruang_kelas(int kebisingan, String bau, String kebocoran, String kerusakan, String keausan) {
 		super.input_identitas_ruang_kelas();
                 System.out.println("masukan kebisingan");
@@ -163,7 +169,9 @@ public abstract class IO extends supersuperclass {
     
     
    
-  
+    void setdata (int kebisingan, String bau, String kebocoran, String kerusakan, String keausan){
+    setdata(kebisingan, bau, kebocoran, kerusakan, keausan);
+    }
     public void keamanan_ruang(String kekokohan, int jumlah_kunci, int jumlah_jendela, String bahaya) {
 		super.input_identitas_ruang_kelas();
                 System.out.println("input kekokohan");
