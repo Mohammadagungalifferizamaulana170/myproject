@@ -1,32 +1,30 @@
-
-import java.util.Scanner;
-
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 
+
+import java.util.Scanner;
+
 /**
  *
- * @author Satelllite
+ * 
  */
-public abstract class supersuperclass extends setget{
+public abstract class supersuperclass {
     
   Scanner in = new Scanner(System.in);
     
-     void input_identitas_ruang_kelas() {
-		System.out.println("input ruang kelas");
-                String Nama_ruang = in.next();
-		System.out.println("input lokasi ruang kelas");
-                String lokasi_ruang=in.next();
-		System.out.println("pilih fakultas");
-		String fakultas=in.next();
-    }
+  abstract void input_identitas_ruang_kelas() ;
+  abstract void persentaseKondisiRuang();
+  abstract void persentaseKondisiSarana();
+  abstract void persentaseKondisiLingkungan();
+  abstract void persentaseKondisiKebersihan();
+  abstract void persentaseKenyamanan();
+  abstract void persentaseKeamanan();
     
-   /* @Override
-    void setdata (String nama_ruang, String lokasi_ruang, String fakultas){
-    super.setdata(nama_ruang, lokasi_ruang, fakultas);
-    }*/
+     
+    
+   
     
 }
+

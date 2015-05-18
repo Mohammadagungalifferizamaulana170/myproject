@@ -1,207 +1,236 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
-
+/**
+ *
+ *
+ */
 import java.util.Scanner;
-public abstract class IO extends supersuperclass {
+
+public class IO extends supersuperclass implements out {
+
     Scanner in = new Scanner(System.in);
-    setget d;
+    setget ini = new setget();
+    setget a;
+    String[] hasil = new String[30];
+
+    public setget getsetget() {
+        return a;
+    }
+
     int i;
     int r;
-    int LCD=0;
-    int AC=0;
-    int lampu=0; 
-    int kipas=0;
-    int steker=0;
-    int CCTV=0;
-    
-    
-    public void input_kondisi_ruang_kelas(int panjang_ruang, int lebar_ruang, int jumlah_kursi, int pintu, int jendela) {
-		super.input_identitas_ruang_kelas();
-                System.out.println("masukan panjang");
-		panjang_ruang = in.nextInt();
-		System.out.println("masukan lebar");
-		lebar_ruang = in.nextInt();
-		System.out.println("masukan jumlah kursi");
-		jumlah_kursi = in.nextInt();
-		System.out.println("masukan jumlah pintu");
-		pintu = in.nextInt();
-		System.out.println("masukan jumlah jendela");
-		jendela = in.nextInt();
-	}
-    
-    void setdata(int panjang_ruang, int lebar_ruang, int jumlah_kursi, int pintu, int jendela){
-    setdata(panjang_ruang, lebar_ruang, jumlah_kursi, pintu, jendela);
+    int LCD = 0;
+    int AC = 0;
+    int lampu = 0;
+    int kipas = 0;
+    int steker = 0;
+    int CCTV = 0;
+
+    @Override
+    public void input_identitas_ruang_kelas() {
+        System.out.println("input ruang kelas");
+        ini.setNama_ruang(in.nextLine());
+        System.out.println("input lokasi ruang kelas");
+        ini.setLokasi_ruang(in.nextLine());
+        System.out.println("pilih fakultas");
+        ini.setFakultas(in.nextLine());
+
     }
-    public void kondisi_dan_posisi_sarana(int jumlah_steker, String kondisi_steker, String posisi_steker, int jumlah_kabel_LCD, 
-                String kondisi_kabel_LCD, String posisi_kabel_LCD, int jumlah_lampu,String kondisi_lampu ,
-                String posisi_lampu, int jumlah_kipas_angin, String kondisi_kipas_angin, String posisi_kipas_angin,
-           
-                                            
-                int jumlah_AC, String kondisi_AC,String posisi_AC,String SSID, String bandwidth, int jumlah_CCTV, String kondisi_CCTV, String posisi_CCTV) {
-		System.out.println("masukan jumlah steker atau stop kontak");
-		jumlah_steker = in.nextInt();
-                for(i=0;i<d.getJumlah_steker();i++){
-                    r=i+1;
-                    System.out.println("Kondisi steker baik/buruk ke  : "+r);
-                    kondisi_steker = in.next();
-                    if (d.getKondisi_steker().equalsIgnoreCase("baik")){
-                        steker++;
-                    }
-                }
-                
-		System.out.println("posisi steker \n1. Di pojok Ruang dan di dekat dosen n\2. Di pojok ruang n\3. dekat dosen  ");
-		posisi_steker = in.next();
-		System.out.println("input jumlah kabel LCD");
-		jumlah_kabel_LCD = in.nextInt();
-                
-                for(i=0;i>d.getJumlah_kabel_LCD();i++){
-                    r=i+1;
-		System.out.println("kondisi kabel LCD baik/ buruk");
-		d.setKondisi_kabel_LCD(in.next());
-                if (d.getKondisi_steker().equalsIgnoreCase("baik")){
-                        LCD++;
-                    }
-                }
-		System.out.println("posisi kabel LCD n\1. dekat dosen n\2. tidak dekat dosen");
-		System.out.println("jumlah lampu");
-		jumlah_lampu = in.nextInt();
-                for(i=0;i>d.getJumlah_lampu();i++){
-                    r=i+1;
-		System.out.println("kondisi lampu baik/buruk");
-		kondisi_lampu = in.next();
-                if (d.getKondisi_lampu().equalsIgnoreCase("baik")){
-                        lampu++;
-                    }
-                }
-                System.out.println("posisi :n\1. atap ruang n\2. bukan di atap ruang");
-                posisi_lampu = in.next();
-		System.out.println("jumlah kipas angin");
-		jumlah_kipas_angin=in.nextInt();
-                for(i=0;i>d.getJumlah_kipas_angin();i++){
-                    r=i+1;
-		System.out.println("kondisi kipas angin ");
-		kondisi_kipas_angin = in.next();
-		if(d.getKondisi_kipas_angin().equalsIgnoreCase("baik")){
-                    kipas++;
-                }
-                }
-                System.out.println("posisi kipas n\1. atap ruang n\2. bukan atap ruang ");
-                posisi_kipas_angin = in.next();
-		System.out.println("jumlah AC");
-		jumlah_AC = in.nextInt();
-                for(i=0;i>d.getJumlah_AC();i++){
-                    r=i+1;
-		System.out.println("kondisi AC");
-		kondisi_AC = in.next();
-                if(d.getKondisi_AC().equalsIgnoreCase("baik")){
-                    AC++;
-                }}
-		System.out.println("posisi AC n\1. dibelakang atau di samping n/2. bukan dibelakang ataupun bukan disamping");
-		posisi_AC = in.next();
-		System.out.println("pilih SSID");
-		SSID = in.next();
-		System.out.println("bandwidth");
-		bandwidth = in.next();
-		System.out.println("jumlah cctv");
-		jumlah_CCTV = in.nextInt();
-                 for(i=0;i>d.getJumlah_CCTV();i++){
-                    r=i+1;
-		System.out.println("kondisi baik cctv");
-		kondisi_CCTV = in.next();
-                if(d.getKondisi_CCTV().equalsIgnoreCase("baik")){
-                    CCTV++;
-                }
-                }
-                System.out.println("posisi cctv n\1. depan dan belakang n\2.belakang n\3. depan n\4. bukan depan dan belakang");
-		kondisi_CCTV=in.next();
-		
+
+    @Override
+    public void input_kondisi_ruang_kelas() {
+
+        System.out.println("masukan panjang");
+        ini.setPanjang_ruang(in.nextInt());
+        System.out.println("masukan lebar");
+        ini.setLebar_ruang(in.nextInt());
+        System.out.println("masukan jumlah kursi");
+        ini.setJumlah_kursi(in.nextInt());
+        System.out.println("masukan jumlah pintu");
+        ini.setJumlah_pintu(in.nextInt());
+        System.out.println("masukan jumlah jendela");
+        ini.setJumlah_jendela(in.nextInt());
+        a = new setget(ini.getPanjang_ruang(), ini.getLebar_ruang(), ini.getJumlah_kursi(), ini.getJumlah_pintu(), ini.getJumlah_jendela());
+
     }
-    void setdata(int jumlah_steker, String kondisi_steker, String posisi_steker, int jumlah_kabel_LCD, 
-            String kondisi_kabel_LCD, String posisi_kabel_LCD, int jumlah_lampu,String kondisi_lampu ,
-            String posisi_lampu, int jumlah_kipas_angin, String kondisi_kipas_angin, String posisi_kipas_angin,
-            int jumlah_AC, String kondisi_AC,String posisi_AC,String SSID, String bandwidth, int jumlah_CCTV, String kondisi_CCTV, String posisi_CCTV){
-            setdata(jumlah_steker, kondisi_steker, posisi_steker, jumlah_kabel_LCD, kondisi_kabel_LCD, posisi_kabel_LCD, jumlah_lampu, kondisi_lampu, posisi_lampu, jumlah_kipas_angin, kondisi_kipas_angin, posisi_kipas_angin, jumlah_AC, kondisi_AC, posisi_AC, SSID, bandwidth, jumlah_CCTV, kondisi_CCTV, posisi_CCTV);
-            }
-    public void input_lingkungan_ruang_kelas(String kondisi_lantai, String kondisi_dinding, String kondisi_atap, String kondisi_pintu, String kondisi_jendela) {
-		super.input_identitas_ruang_kelas();
-                System.out.println("kondisi lantai");
-		kondisi_lantai = in.next();
-		System.out.println("kondisi dinding");
-		kondisi_dinding = in.next();
-		System.out.println("kondisi atap");
-		kondisi_atap = in.next();
-		System.out.println("kondisi pintu");
-		kondisi_pintu = in.next();
-		System.out.println("kondisi jendela");
-		kondisi_jendela = in.next();
-	}
-    
-    void setdata(String kondisi_lantai, String kondisi_dinding, String kondisi_atap, String kondisi_pintu, String kondisi_jendela){
-    setdata(kondisi_lantai, kondisi_dinding, kondisi_atap, kondisi_pintu, kondisi_jendela);
+
+    @Override
+    public void kondisi_dan_posisi_sarana() {
+        System.out.println("masukan jumlah steker atau stop kontak");
+        ini.setJumlah_steker(in.nextInt());
+        System.out.println("Kondisi steker baik/buruk ke  : ");
+        ini.setKondisi_steker(in.next());
+        System.out.println("posisi steker \n1. Di pojok Ruang dan di dekat dosen n\2. Di pojok ruang n\3. dekat dosen  ");
+        ini.setPosisi_steker(in.next());
+        System.out.println("input jumlah kabel LCD");
+        ini.setJumlah_kabel_LCD(in.nextInt());
+        System.out.println("kondisi kabel LCD baik/ buruk");
+        ini.setKondisi_kabel_LCD(in.next());
+        System.out.println("posisi kabel LCD n\1. dekat dosen n\2. tidak dekat dosen");
+        System.out.println("jumlah lampu");
+        ini.setJumlah_lampu(in.nextInt());
+        System.out.println("kondisi lampu baik/buruk");
+        System.out.println("posisi :n\1. atap ruang n\2. bukan di atap ruang");
+        ini.setPosisi_lampu(in.next());
+        System.out.println("jumlah kipas angin");
+        ini.setJumlah_kipas_angin(in.nextInt());
+        System.out.println("kondisi kipas angin ");
+        ini.setKondisi_kipas_angin(in.next());
+        System.out.println("posisi kipas n\1. atap ruang n\2. bukan atap ruang ");
+        ini.setPosisi_kipas_angin(in.next());
+        System.out.println("jumlah AC");
+        ini.setJumlah_AC(in.nextInt());
+        System.out.println("kondisi AC");
+        ini.setKondisi_AC(in.next());
+        System.out.println("posisi AC n\1. dibelakang atau di samping n/2. bukan dibelakang ataupun bukan disamping");
+        ini.setPosisi_AC(in.next());
+        System.out.println("pilih SSID");
+        ini.setSSID(in.next());
+        System.out.println("bandwidth");
+        ini.setBandwidth(in.next());;
+        System.out.println("jumlah cctv");
+        ini.setJumlah_CCTV(in.nextInt());
+        System.out.println("kondisi baik cctv");
+        ini.setKondisi_CCTV(in.next());
+        System.out.println("posisi cctv n\1. depan dan belakang n\2.belakang n\3. depan n\4. bukan depan dan belakang");
+        ini.setPosisi_CCTV(in.next());
+
     }
-    public void kebersihan_ruang_kelas(String sirkulasi_udara, int pencahayaan, int kelembapan, int suhu) {
-		super.input_identitas_ruang_kelas();
-                System.out.println("masukan sirkulasi udara");
-		sirkulasi_udara = in.nextLine();
-		System.out.println("masukan nilai pencahaan");
-		pencahayaan = in.nextInt();
-		System.out.println("masukan kelembapan");
-		kelembapan = in.nextInt();
-		System.out.println("Masukan suhu Celcius");
-		suhu = in.nextInt();
-	}
-    
-    void setdata (String sirkulasi_udara, int pencahayaan, int kelembapan, int suhu){
-    setdata(sirkulasi_udara, pencahayaan, kelembapan, suhu);  
+
+    @Override
+    public void input_lingkungan_ruang_kelas() {
+
+        System.out.println("kondisi lantai");
+        ini.setKondisi_lantai(in.next());
+        System.out.println("kondisi dinding");
+        ini.setKondisi_dinding(in.next());
+        System.out.println("kondisi atap");
+        ini.setKondisi_atap(in.next());
+        System.out.println("kondisi pintu");
+        ini.setKondisi_pintu(in.next());
+        System.out.println("kondisi jendela");
+        ini.setKondisi_jendela(in.next());
+        a = new setget(ini.getKondisi_lantai(), ini.getKondisi_dinding(), ini.getKondisi_atap(), ini.getKondisi_pintu(), ini.getKondisi_jendela());
     }
-    public void kenyamanan_ruang_kelas(int kebisingan, String bau, String kebocoran, String kerusakan, String keausan) {
-		super.input_identitas_ruang_kelas();
-                System.out.println("masukan kebisingan");
-		kebisingan = in.nextInt();
-		System.out.println("masukan bau");
-		bau = in.nextLine();
-		System.out.println("masukan kebocoran");
-		kebocoran = in.nextLine();
-		System.out.println("masukan kerusakan");
-		kerusakan = in.nextLine();
-		System.out.println("masukan keausan");
-		keausan = in.nextLine();
-	}
-    
-    
-   
-    void setdata (int kebisingan, String bau, String kebocoran, String kerusakan, String keausan){
-    setdata(kebisingan, bau, kebocoran, kerusakan, keausan);
+
+    @Override
+    public void kebersihan_ruang_kelas() {
+
+        System.out.println("masukan sirkulasi udara");
+        ini.setSirkulasi_udara(in.nextLine());
+        System.out.println("masukan nilai pencahaan");
+        ini.setPencahayaan(in.nextInt());
+        System.out.println("masukan kelembapan");
+        ini.setKelembapan(in.nextInt());
+        System.out.println("Masukan suhu Celcius");
+        ini.setSuhu(in.nextInt());
+        a = new setget(ini.getSirkulasi_udara(), ini.getPencahayaan(), ini.getKelembapan(), ini.getSuhu());
     }
-    public void keamanan_ruang(String kekokohan, int jumlah_kunci, int jumlah_jendela, String bahaya) {
-		super.input_identitas_ruang_kelas();
-                System.out.println("input kekokohan");
-		kekokohan=in.next();
-		System.out.println("jumlah kunci pintu");
-		jumlah_kunci=in.nextInt();
-		System.out.println("jumlah jendela");
-		jumlah_jendela= in.nextInt();
-		System.out.println("bahaya atau aman ?");
-                bahaya = in.next();
-	}
-    void setdata(String kekokohan, int jumlah_kunci, int jumlah_jendela, String bahaya){
-    setdata(kekokohan, jumlah_kunci, jumlah_jendela, bahaya);
-            }
-    
-    
-    public void tampil (){
-            
-            System.out.println("ruang : "+d.getNama_ruang());
-            System.out.println("lokasi : "+d.getLokasi_ruang());
-            System.out.println("fakultas : "+d.getFakultas());
-            
-            System.out.println("jumlah kursi di dalam ruang : "+d.getJumlah_kursi());
-           
-            System.out.println("jumlah pintu : "+d.getJumlah_pintu());
-            System.out.println("jumlah jendela :"+d.getJumlah_jendela());
-        
+
+    @Override
+    public void kenyamanan_ruang_kelas() {
+
+        System.out.println("masukan kebisingan");
+        ini.setKebisingan(in.nextInt());
+        System.out.println("masukan bau");
+        ini.setBau(in.nextLine());
+        System.out.println("masukan kebocoran");
+        ini.setKebocoran(in.nextLine());
+        System.out.println("masukan kerusakan");
+        ini.setKerusakan(in.nextLine());
+        System.out.println("masukan keausan");
+        ini.setKeausan(in.nextLine());
+        a = new setget(ini.getKebisingan(), ini.getBau(), ini.getKebocoran(), ini.getKerusakan(), ini.getKeausan());
+    }
+
+    @Override
+    public void keamanan_ruang() {
+
+        System.out.println("input kekokohan");
+        ini.setKekokohan(in.next());
+        System.out.println("jumlah kunci pintu");
+        ini.setJumlah_kunci(in.nextInt());
+        System.out.println("jumlah jendela");
+        ini.setJumlah_jendela(in.nextInt());
+        System.out.println("bahaya atau aman ?");
+        ini.setBahaya(in.next());
+        a = new setget(ini.getKekokohan(), ini.getJumlah_kunci(), ini.getJumlah_jendela(), ini.getBahaya());
+
+    }
+
+    @Override
+    public void hasil() {
+        System.out.println("Hasil Analisis Ruang :" + hasil[0]);
+        System.out.println("Hasil Analisis Rasio Luas :" + hasil[1]);
+        System.out.println("Hasil Analisis Pintu dan Jendela :" + hasil[2]);
+        System.out.println("Hasil Analisis Kelistrikan :" + hasil[3]);
+        System.out.println("Hasil Analisis LCD :" + hasil[4]);
+        System.out.println("Hasil Analisis Lampu :" + hasil[5]);
+        System.out.println("Hasil Analisis Kipas Angin :" + hasil[6]);
+        System.out.println("Hasil Analisis AC :" + hasil[7]);
+        System.out.println("Hasil Analisis Internet :" + hasil[8]);
+        System.out.println("Hasil Analisis CCTV :" + hasil[9]);
+        System.out.println("Hasil Analisis Kebersihan :" + hasil[10]);
+        System.out.println("Hasil Analisis Sirkulasi Udara :" + hasil[11]);
+        System.out.println("Hasil Analisis Pencahayaan :" + hasil[12]);
+        System.out.println("Hasil Analisis Kelembapan :" + hasil[13]);
+        System.out.println("Hasil Analisis Suhu :" + hasil[14]);
+        System.out.println("Hasil Analisis Kebisingan :" + hasil[15]);
+        System.out.println("Hasil Analisis Bau :" + hasil[16]);
+        System.out.println("Hasil Analisis Kebocoran :" + hasil[17]);
+        System.out.println("Hasil Analisis Kerusakan :" + hasil[18]);
+        System.out.println("Hasil Analisis Keausan :" + hasil[19]);
+        System.out.println("Hasil Analisis Kekokohan :" + hasil[20]);
+        System.out.println("Hasil Analisis Kunci Pintu dan Jendela :" + hasil[21]);
+        System.out.println("Hasil Analisis Keamanan Ruang :" + hasil[22]);
+    }
+
+    @Override
+    public void tes() {
+        System.out.println("ruang : " + ini.getNama_ruang());
+        System.out.println("lokasi : " + ini.getLokasi_ruang());
+        System.out.println("fakultas : " + ini.getFakultas());
+
+        System.out.println("jumlah kursi di dalam ruang : " + ini.getJumlah_kursi());
+
+        System.out.println("jumlah pintu : " + ini.getJumlah_pintu());
+        System.out.println("jumlah jendela :" + ini.getJumlah_jendela());
+
+    }
+
+    public setget getruang() {
+        return a;
+    }
+
+    @Override
+    void persentaseKondisiRuang() {
+     }
+
+    @Override
+    void persentaseKondisiSarana() {
+    }
+
+    @Override
+    void persentaseKondisiLingkungan() {
+      }
+
+    @Override
+    void persentaseKondisiKebersihan() {
+     }
+
+    @Override
+    void persentaseKenyamanan() {
         }
-    public setget getruang(){
-            return d;
-        }
-    
-}
+
+    @Override
+    void persentaseKeamanan() {
+     }
+
+   }
+
+
+
+
