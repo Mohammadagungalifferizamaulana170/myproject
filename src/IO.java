@@ -15,7 +15,7 @@ public class IO extends supersuperclass implements out {
     setget ini = new setget();
     setget a;
     String[] hasil = new String[30];
-
+//tess
     public setget getsetget() {
         return a;
     }
