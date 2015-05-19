@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Eko Ari Irawan (167)
+ * 
  */
 public class Sistem extends supersuperclass{
 
