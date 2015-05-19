@@ -6,10 +6,7 @@
 
 import java.util.Scanner;
 
-/**
- *
- * 
- */
+
 public class Sistem extends supersuperclass{
 
     IO a = new IO();
