@@ -236,7 +236,7 @@ public class Sistem extends supersuperclass{
             ts++;
         }
        a.hasil();
-//      
+     
         return s;
     }
     @Override
@@ -436,7 +436,7 @@ public class Sistem extends supersuperclass{
 
     @Override
     void input_identitas_ruang_kelas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
     
 }
