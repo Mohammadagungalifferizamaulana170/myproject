@@ -97,9 +97,12 @@ public class IO extends supersuperclass implements out {
         ini.setKondisi_CCTV(in.next());
         System.out.println("posisi cctv n\1. depan dan belakang n\2.belakang n\3. depan n\4. bukan depan dan belakang");
         ini.setPosisi_CCTV(in.next());
-
+      a = new setget(ini.getJumlah_steker(),ini.getKondisi_steker(),ini.getPosisi_steker(),ini.getJumlah_kabel_LCD(),
+              ini.getKondisi_kabel_LCD(),ini.getPosisi_kabel_LCD(),ini.getJumlah_lampu(),ini.getKondisi_lampu(),
+              ini.getPosisi_lampu(),ini.getJumlah_kipas_angin(),ini.getKondisi_kipas_angin(),ini.getPosisi_kipas_angin(),ini.getJumlah_AC(),ini.getKondisi_AC(),ini.getPosisi_AC(),ini.getSSID(),
+              ini.getBandwidth(),ini.getJumlah_CCTV(),ini.getKondisi_CCTV(),ini.getPosisi_CCTV());
     }
-
+    
     @Override
     public void input_lingkungan_ruang_kelas() {
 
