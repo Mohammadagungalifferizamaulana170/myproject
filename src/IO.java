@@ -160,12 +160,79 @@ public class IO extends supersuperclass implements out {
         a = new setget(ini.getKekokohan(), ini.getJumlah_kunci(), ini.getJumlah_jendela(), ini.getBahaya());
 
     }
-
+    
     @Override
+    public void setget(int panjang_ruang, int lebar_ruang, int jumlah_kursi, int pintu, int jendela){
+        System.out.println("Panjang Ruang Anda :"+panjang_ruang);
+        System.out.println("Lebar Ruang Anda :"+lebar_ruang);
+        System.out.println("Jumlah Kursi Anda :"+jumlah_kursi);
+        System.out.println("Jumlah Pintu Anda :"+pintu);
+        System.out.println("Jumlah Jendela Anda :"+jendela);
+    }
+    @Override
+    public void setget(int jumlah_steker, String kondisi_steker, String posisi_steker, int jumlah_kabel_LCD, 
+            String kondisi_kabel_LCD, String posisi_kabel_LCD, int jumlah_lampu,String kondisi_lampu ,
+            String posisi_lampu, int jumlah_kipas_angin, String kondisi_kipas_angin, String posisi_kipas_angin,
+            int jumlah_AC, String kondisi_AC,String posisi_AC,String SSID, String bandwidth, int jumlah_CCTV, String kondisi_CCTV, String posisi_CCTV){
+        System.out.println("Jumlah Steker Ruang :"+jumlah_steker);
+        System.out.println("Kondisi Steker Ruang :"+kondisi_steker);
+        System.out.println("Posisi Steker Ruang :"+posisi_steker);
+        System.out.println("Jumlah Kabel LCD Ruang :"+jumlah_kabel_LCD);
+        System.out.println("Kondisi Kabel LCD Ruang :"+kondisi_kabel_LCD);
+        System.out.println("Posisi Kabel LCD Ruang :"+posisi_kabel_LCD);
+        System.out.println("Jumlah Lampu Ruang :"+jumlah_lampu);
+        System.out.println("Kondisi Lampu Ruang :"+kondisi_lampu);
+        System.out.println("Posisi Lampu Ruang :"+posisi_lampu);
+        System.out.println("Jumlah Kipas Angin Ruang :"+jumlah_kipas_angin);
+        System.out.println("Kondisi Kipas Angin Ruang :"+kondisi_kipas_angin);
+        System.out.println("Posisi Kipas Angin Ruang :"+posisi_kipas_angin);
+        System.out.println("Jumlah AC Ruang :"+jumlah_AC);
+        System.out.println("Kondisi AC Ruang :"+kondisi_AC);
+        System.out.println("Posisi AC Ruang :"+posisi_AC);
+        System.out.println("Ruang Konek SSID :"+SSID);
+        System.out.println("Ruang Konek WIFI :"+bandwidth);
+        System.out.println("Jumlah CCTV Ruang :"+jumlah_CCTV);
+        System.out.println("Kondisi CCTV Ruang :"+kondisi_CCTV);
+        System.out.println("Posisi CCTV Ruang :"+posisi_CCTV);
+    }
+    
+    @Override
+    public void setget (String kondisi_lantai, String kondisi_dinding, String kondisi_atap, String kondisi_pintu, String kondisi_jendela){
+        System.out.println("Kondisi Lantai Ruang :"+kondisi_lantai);
+        System.out.println("Kondisi Dinding Ruang :"+kondisi_dinding);
+        System.out.println("Kondisi Atap Ruang :"+kondisi_atap);
+        System.out.println("Kodisi Pintu Ruang :"+kondisi_pintu);
+        System.out.println("Kondisi Jendela Ruang :"+kondisi_jendela);
+        
+    }
+    @Override
+    public void setget (String sirkulasi_udara, int pencahayaan, int kelembapan, int suhu){
+        System.out.println("Sirkulasi Udara Ruang :"+sirkulasi_udara);
+        System.out.println("Pencahayaan Ruang :"+pencahayaan);
+        System.out.println("Kelembapan Ruang :"+kelembapan);
+        System.out.println("Suhu Ruang :"+suhu);
+    }
+    @Override
+    public void setget(int kebisingan, String bau, String kebocoran, String kerusakan, String keausan){
+        System.out.println("Kebisingan Ruang :"+kebisingan);
+        System.out.println("Bau Ruang :"+bau);
+        System.out.println("Kebocoran Ruang :"+kebocoran);
+        System.out.println("Kerusakan Ruang :"+kerusakan);
+        System.out.println("Keausan Ruang :"+keausan);
+        
+    }
+    @Override
+    public void setget(String kekokohan, int jumlah_kunci, int jumlah_jendela, String bahaya){
+        System.out.println("Kekokohan Ruang :"+kekokohan);
+        System.out.println("Jumlah Kunci Ruang :"+jumlah_kunci);
+        System.out.println("Jumlah Jendela Ruang :"+jumlah_jendela);
+        System.out.println("Bahaya Ruang :"+bahaya);
+    }
+    /*@Override
     public void hasil() {
         System.out.println("Hasil Analisis Ruang :" + hasil[0]);
         System.out.println("Hasil Analisis Rasio Luas :" + hasil[1]);
-        System.out.println("Hasil Analisis Pintu dan Jendela :" + hasil[2]);
+        System.out.println("Hasil Analisis Pintu dan Jendela :" + hasil[2]); 
         System.out.println("Hasil Analisis Kelistrikan :" + hasil[3]);
         System.out.println("Hasil Analisis LCD :" + hasil[4]);
         System.out.println("Hasil Analisis Lampu :" + hasil[5]);
@@ -187,6 +254,7 @@ public class IO extends supersuperclass implements out {
         System.out.println("Hasil Analisis Kunci Pintu dan Jendela :" + hasil[21]);
         System.out.println("Hasil Analisis Keamanan Ruang :" + hasil[22]);
     }
+    
 
     @Override
     public void tes() {
@@ -199,7 +267,7 @@ public class IO extends supersuperclass implements out {
         System.out.println("jumlah pintu : " + ini.getJumlah_pintu());
         System.out.println("jumlah jendela :" + ini.getJumlah_jendela());
 
-    }
+    }*/
 
     public setget getruang() {
         return a;
