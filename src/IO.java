@@ -8,6 +8,8 @@
  *
  */
 import java.util.Scanner;
+import javax.swing.JCheckBox;
+import javax.swing.JTextField;
 
 public class IO extends supersuperclass implements out {
 
@@ -28,7 +30,83 @@ public class IO extends supersuperclass implements out {
     int kipas = 0;
     int steker = 0;
     int CCTV = 0;
-
+    
+    public IO(JTextField nama,JTextField lokasi,JTextField fakultas,JTextField jurusan){
+        ini.setNama_ruang(nama.getText());
+        ini.setLokasi_ruang(lokasi.getText());
+        ini.setFakultas(fakultas.getText());
+        
+        a = new setget(ini.getNama_ruang(),ini.getLokasi_ruang(),ini.getFakultas()); 
+    }
+    public IO(JTextField panjang,JTextField lebar,JTextField kursi,JTextField pintu,JTextField jendela){
+        ini.setPanjang_ruang(Integer.parseInt(panjang.getText()));
+        ini.setLebar_ruang(Integer.parseInt(lebar.getText()));
+        ini.setJumlah_pintu(Integer.parseInt(pintu.getText()));
+        ini.setJumlah_kursi(Integer.parseInt(kursi.getText()));
+        ini.setJumlah_jendela(Integer.parseInt(jendela.getText()));
+        System.out.println(""+ini.getPanjang_ruang());
+        a = new setget(ini.getPanjang_ruang(),ini.getLebar_ruang(),ini.getJumlah_kursi(),ini.getJumlah_pintu(),ini.getJumlah_jendela()); 
+    }
+    public IO(JCheckBox Kokoh,JCheckBox TKokoh,JCheckBox Adakunci,JCheckBox Tkunci,JCheckBox Aman,JCheckBox Bahaya){
+        if(Kokoh.isSelected()){
+            ini.setKekokohan("Kokoh");
+        }
+        else if(TKokoh.isSelected()){
+            ini.setKekokohan("Rapuh");
+        }
+        if(Adakunci.isSelected()){
+            ini.setKondisi_pintu("Terkunci");
+        }
+        else if(Tkunci.isSelected()){
+            ini.setKondisi_pintu("Terbuka");
+        }
+        if(Aman.isSelected()){
+            ini.setBahaya("Aman");
+        }
+        else if(Bahaya.isSelected()){
+            ini.setBahaya("Berbahaya");
+        }
+        rk = new RuangKelas(kls.getKekokohan(),kls.getKunciPintuJendela(),kls.getBahaya()); 
+    
+    }
+    public IO(JTextField Bising,JTextField PBising,JTextField Bau,JTextField PBau,JTextField Aus,JTextField PAus,JCheckBox BBanyak,JCheckBox BSedang,JCheckBox BSedikit,JCheckBox BNon,JCheckBox RBanyak,JCheckBox RSedang,JCheckBox RSedikit,JCheckBox RNon){
+        if(BBanyak.isSelected()){
+            kls.setKebocoran("Sangat Parah");
+        }
+        else if(BSedang.isSelected()){
+            kls.setKebocoran("Parah");
+        }
+        else if(BSedikit.isSelected()){
+            kls.setKebocoran("Tidak Begitu Parah");
+        }
+        else if(BNon.isSelected()){
+            kls.setKebocoran("Keadaan Baik");
+        }
+            if(RBanyak.isSelected()){
+                kls.setKerusakan("Sangat Parah");
+            }
+            else if(RSedang.isSelected()){
+                kls.setKerusakan("Parah");
+            }
+            else if(RSedikit.isSelected()){
+                kls.setKerusakan("Tidak Begitu Parah");
+            }
+            else if(RNon.isSelected()){
+                kls.setKerusakan("Keadaan Baik");
+            }
+        kls.setKebisingan(Bising.getText());
+        kls.setKeausan(Aus.getText());
+        kls.setBau(Bau.getText());
+        //String Kebisingan, String Bau, String Kebocoran, String Kerusakan, String Keausan, String x
+        rk = new RuangKelas(kls.getKebisingan(),kls.getBau(),kls.getKebocoran(),kls.getKerusakan(),kls.getKeausan(),null); 
+    }         
+    public IO(){
+        
+    }
+    public RuangKelas getRuangKelas(){
+    return rk;
+    }
+    
     @Override
     public void input_identitas_ruang_kelas() {
         System.out.println("input ruang kelas");
