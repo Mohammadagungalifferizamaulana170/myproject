@@ -173,6 +173,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jj">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jjActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="simpan">
           <Properties>

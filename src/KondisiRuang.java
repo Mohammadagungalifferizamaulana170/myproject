@@ -80,6 +80,12 @@ public class KondisiRuang extends javax.swing.JFrame {
 
         jLabel1.setText("Kondisi Ruang Kelas");
 
+        jj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jjActionPerformed(evt);
+            }
+        });
+
         simpan.setText("simpan");
         simpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,6 +217,10 @@ public class KondisiRuang extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "salah"+e);
         }
     }//GEN-LAST:event_simpanActionPerformed
+
+    private void jjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jjActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jjActionPerformed
 
     /**
      * @param args the command line arguments
