@@ -21,6 +21,7 @@ public class KondisiRuang extends javax.swing.JFrame {
      */
     public KondisiRuang() {
         initComponents();
+        lj.setVisible(false);
     }
 
     /**
@@ -44,9 +45,9 @@ public class KondisiRuang extends javax.swing.JFrame {
         jp = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jj = new javax.swing.JTextField();
-        simpan = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        sp = new javax.swing.JButton();
+        rt = new javax.swing.JButton();
+        lj = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,7 +79,8 @@ public class KondisiRuang extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Kondisi Ruang Kelas");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("KONDISI RUANG ");
 
         jj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,21 +88,21 @@ public class KondisiRuang extends javax.swing.JFrame {
             }
         });
 
-        simpan.setText("simpan");
-        simpan.addActionListener(new java.awt.event.ActionListener() {
+        sp.setText("simpan");
+        sp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                simpanActionPerformed(evt);
+                spActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Reset");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        rt.setText("Reset");
+        rt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                rtActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Next");
+        lj.setText("Lanjut");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -132,11 +134,12 @@ public class KondisiRuang extends javax.swing.JFrame {
                                     .addComponent(pr))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(simpan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(rt, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(sp, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lj, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15))
         );
         jPanel1Layout.setVerticalGroup(
@@ -164,13 +167,13 @@ public class KondisiRuang extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
-                .addComponent(simpan)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addGap(69, 69, 69)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rt)
+                    .addComponent(sp))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lj)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -199,12 +202,22 @@ public class KondisiRuang extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jpActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void rtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rtActionPerformed
+    pr.setText(null);
+    lr.setText(null);
+    jk.setText(null);
+    jp.setText(null);
+    jj.setText(null);
 
-    private void simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanActionPerformed
-            try {
+// TODO add your handling code here:
+    }//GEN-LAST:event_rtActionPerformed
+
+    private void spActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spActionPerformed
+    if(pr.getText().equals("")&&lr.getText().equals("")&&jk.getText().equals("")&&jp.getText().equals("")&&jj.getText().equals("")){
+    lj.setVisible(false);
+        JOptionPane.showMessageDialog(null,"Data Belum Terisi");
+    }else{
+      try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection=DriverManager.getConnection("jdbc:mysql://localhost/myproject","root","");
             Statement statement=connection.createStatement();
@@ -215,8 +228,11 @@ public class KondisiRuang extends javax.swing.JFrame {
        
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "salah"+e);
-        }
-    }//GEN-LAST:event_simpanActionPerformed
+        }  
+    lj.setVisible( true); 
+    }
+        
+    }//GEN-LAST:event_spActionPerformed
 
     private void jjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jjActionPerformed
         // TODO add your handling code here:
@@ -258,8 +274,6 @@ public class KondisiRuang extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -270,8 +284,10 @@ public class KondisiRuang extends javax.swing.JFrame {
     private javax.swing.JTextField jj;
     private javax.swing.JTextField jk;
     private javax.swing.JTextField jp;
+    private javax.swing.JButton lj;
     private javax.swing.JTextField lr;
     private javax.swing.JTextField pr;
-    private javax.swing.JButton simpan;
+    private javax.swing.JButton rt;
+    private javax.swing.JButton sp;
     // End of variables declaration//GEN-END:variables
 }

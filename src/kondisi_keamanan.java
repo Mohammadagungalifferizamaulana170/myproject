@@ -9,6 +9,9 @@
  * @author Reddish M
  */
 public class kondisi_keamanan extends javax.swing.JPanel {
+    
+    setget sg = new setget();
+    int s=0,ts=0,kondisi;
 
     /**
      * Creates new form kondisi_keamanan

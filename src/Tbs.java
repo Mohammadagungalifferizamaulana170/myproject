@@ -16,6 +16,8 @@ public class Tbs {
    public static void main(String[] args) {
         Sistem analisis = new Sistem();
         IO in = new IO();
+        //in.input_kondisi_ruang_kelas();
+        analisis.CheckKondisiRuang();
         
         
     }

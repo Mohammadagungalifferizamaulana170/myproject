@@ -8,6 +8,7 @@
  *
  */
 import java.util.Scanner;
+import javax.swing.*;
 
 public class IO extends supersuperclass implements out {
 
@@ -15,6 +16,16 @@ public class IO extends supersuperclass implements out {
     setget ini = new setget();
     setget a;
     String[] hasil = new String[30];
+    IO(){
+    }
+    IO(JTextField ruang){
+    }
+    public IO(JTextField ruang,JTextField lokasi,JComboBox fak){
+        ini.setNama_ruang(ruang.getText());
+        ini.setLokasi_ruang(lokasi.getText());
+        ini.setFakultas((String) fak.getSelectedItem());
+        a = new setget(ini.getNama_ruang(),ini.getLokasi_ruang(),ini.getFakultas()); 
+    }
 //tess
     public setget getsetget() {
         return a;
@@ -31,12 +42,12 @@ public class IO extends supersuperclass implements out {
 
     @Override
     public void input_identitas_ruang_kelas() {
-        System.out.println("input ruang kelas");
-        ini.setNama_ruang(in.nextLine());
-        System.out.println("input lokasi ruang kelas");
-        ini.setLokasi_ruang(in.nextLine());
-        System.out.println("pilih fakultas");
-        ini.setFakultas(in.nextLine());
+//        System.out.println("input ruang kelas");
+//        ini.setNama_ruang(in.nextLine());
+//        System.out.println("input lokasi ruang kelas");
+//        ini.setLokasi_ruang(in.nextLine());
+//        System.out.println("pilih fakultas");
+//        ini.setFakultas(in.nextLine());
 
     }
 
@@ -161,8 +172,17 @@ public class IO extends supersuperclass implements out {
 
     }
     
+    public void setget(String nama, String lokasi, String fakultas){
+        System.out.println("=======================================");
+        System.out.println("Nama Ruang Anda :"+ nama);
+        System.out.println("Lokasi Ruang Anda :"+lokasi);
+        System.out.println("Fakultas Ruang Anda :"+fakultas);
+//        System.out.println("Jumlah Pintu Anda :"+pintu);
+//        System.out.println("Jumlah Jendela Anda :"+jendela);
+    }
     @Override
     public void setget(int panjang_ruang, int lebar_ruang, int jumlah_kursi, int pintu, int jendela){
+        System.out.println("=======================================");
         System.out.println("Panjang Ruang Anda :"+panjang_ruang);
         System.out.println("Lebar Ruang Anda :"+lebar_ruang);
         System.out.println("Jumlah Kursi Anda :"+jumlah_kursi);
