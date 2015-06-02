@@ -37,6 +37,8 @@ public class Sistem extends supersuperclass{
     }
 
     double HitungRasioLuas() {
+        
+        
         RasioLuas = Luas / ini.getJumlah_kursi();
         return RasioLuas;
     }
@@ -45,6 +47,7 @@ public class Sistem extends supersuperclass{
         a.input_kondisi_ruang_kelas();
         ini = a.getruang();
         Luas = ini.getPanjang_ruang()* ini.getLebar_ruang();
+        System.out.println(""+ini.getJumlah_pintu());
         if (ini.getLebar_ruang()== ini.getPanjang_ruang()) {
             System.out.println("Luas = "+Luas);
             System.out.println("Luas Tidak s");
@@ -77,9 +80,8 @@ public class Sistem extends supersuperclass{
             System.out.println("Jumlah Jendela Tidak s");
             ts++;
         }
-        a.hasil();
+        a.setget(ini.getPanjang_ruang(),ini.getLebar_ruang(),ini.getJumlah_kursi(),ini.getJumlah_pintu(),ini.getJumlah_jendela());
         
-
         return s;
     }
     @Override
