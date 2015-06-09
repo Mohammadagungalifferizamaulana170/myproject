@@ -54,7 +54,7 @@ public class setget {
     private String kekokohan;
     private String bahaya;
     private int jumlah_kunci;
-    
+    //private String bahaya;
 
     
 
