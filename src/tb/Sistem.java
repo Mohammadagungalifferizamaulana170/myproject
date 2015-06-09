@@ -7,6 +7,7 @@ package tb;
 
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 
 public class Sistem extends supersuperclass{
@@ -14,7 +15,7 @@ public class Sistem extends supersuperclass{
     IO a = new IO();
     setget ini = new setget();
     Scanner in = new Scanner(System.in);
-    int s = 0, ts = 0, kondisi;
+    int ts = 0, kondisi;
     private double Luas, RasioLuas;
 
     public double getLuas() {
@@ -43,18 +44,19 @@ public class Sistem extends supersuperclass{
         return RasioLuas;
     }
 
-    double CheckKondisiRuang() {
-        a.input_kondisi_ruang_kelas();
-        ini = a.getruang();
+    int CheckKondisiRuang(int se) {
+        //a.input_kondisi_ruang_kelas();
+       int w = 0;
+//    ini = a.getruang();
         Luas = ini.getPanjang_ruang()* ini.getLebar_ruang();
         if (ini.getLebar_ruang()== ini.getPanjang_ruang()) {
-            System.out.println("Luas = "+Luas);
-            System.out.println("Luas Tidak s");
+//            System.out.println("Luas = "+Luas);
+//            System.out.println("Luas Tidak s");
             ts++;
         } else {
-            System.out.println("Luas = "+Luas);
-            System.out.println("Luas s");
-            s++;
+//            System.out.println("Luas = "+Luas);
+//            System.out.println("Luas s");
+            w++;
         }
         RasioLuas = Luas / ini.getJumlah_kursi();
         System.out.println("Rasio : " + RasioLuas);
@@ -63,39 +65,41 @@ public class Sistem extends supersuperclass{
         }
         else{
             System.out.println("Rasio s");
-            s++;
+            w++;
         }
         if (ini.getJumlah_pintu()>= 2) {
             System.out.println("Jumlah Pintu s");
-            s++;
+            w++;
         } else {
             System.out.println("Jumlah Pintu Tidak s");
             ts++;
         }
         if (ini.getJumlah_jendela()>= 1) {
             System.out.println("Jumlah Jendela s");
-            s++;
+            w++;
         } else {
             System.out.println("Jumlah Jendela Tidak s");
             ts++;
         }
-        a.hasil();
-        
+//        a.hasil();
+        se = se+w;
+        JOptionPane.showMessageDialog(null,w);
 
-        return s;
+        return se;
     }
     @Override
    void persentaseKondisiRuang(){
-       int total = s*25;
+       int total = 25;
         System.out.println("persentase KOndisi Ruang : "+total+"%");
         System.out.println("======================================");
         System.out.println("::Anda Masuk CheckKondisiSarana::");
        
     }
 
-    double CheckKondisiSarana() {
-        a.kondisi_dan_posisi_sarana();
-        ini = a.getruang();
+    int CheckKondisiSarana(int ss) {
+        
+        int s = 0;
+        
         
         if (ini.getJumlah_steker()>= 4) {
             System.out.println("Jumlah Stop Kontak : s");
@@ -104,13 +108,13 @@ public class Sistem extends supersuperclass{
             System.out.println("Tidak Sesusai");
             ts++;
         }
-        if (ini.getKondisi_steker().equalsIgnoreCase("baik")){
-            System.out.println("KondisiStopKontak : s");
-            s++;
-        } else {
-            System.out.println("Tidak Sesuai");
-        }
-        if (ini.getPosisi_steker().equalsIgnoreCase("DekatDosen") || ini.getPosisi_steker().equalsIgnoreCase("PojokKelas")) {
+//        if (ini.juml.equalsIgnoreCase("baik")){
+//            System.out.println("KondisiStopKontak : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak Sesuai");
+//        }
+        if (ini.getJumlah_posisi_steker().equalsIgnoreCase("Dekat Dosen") || ini.getPosisi_steker().equalsIgnoreCase("Pojok ruang")) {
             System.out.println("PosisiStopKontak : s");
             s++;
         } else {
@@ -125,13 +129,13 @@ public class Sistem extends supersuperclass{
             System.out.println("Tidak s");
             ts++;
         }
-        if(ini.getKondisi_kabel_LCD().equalsIgnoreCase("baik")|| ini.getKondisi_kabel_LCD().equalsIgnoreCase("berfungsi")){
-            System.out.println("KondisiKabelLCD : s");
-            s++;
-        }else{
-            System.out.println("Tidak s");
-            ts++;
-        }
+//        if(ini.getKondisi_kabel_LCD().equalsIgnoreCase("baik")|| ini.getKondisi_kabel_LCD().equalsIgnoreCase("berfungsi")){
+//            System.out.println("KondisiKabelLCD : s");
+//            s++;
+//        }else{
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
         if(ini.getPosisi_kabel_LCD().equalsIgnoreCase("dekatdosen")){
             System.out.println("PosisiKabelLCD : s");
             s++;
@@ -180,36 +184,12 @@ public class Sistem extends supersuperclass{
         }else {
             System.out.println("Tidak s");
             ts++;
-        }
-        if(ini.getJumlah_AC()>=1){
-            System.out.println("JumlahAC : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(ini.getKondisi_AC().equalsIgnoreCase("baik")){
-            System.out.println("KondisiAC : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            s++;
-        }
-        if(ini.getPosisi_AC().equalsIgnoreCase("belakang")|| ini.getPosisi_AC().equalsIgnoreCase("samping")){
-            System.out.println("PosisiAC : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(ini.getSSID().equalsIgnoreCase("ummhotspot")){
-            System.out.println("getSSID : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(ini.getBandwidth().equalsIgnoreCase("bisa")){
+       
+        
+        } 
+       
+        
+        if(ini.getBandwidth().equalsIgnoreCase("Connect")){
             System.out.println("Bandwidth : s");
             s++;
         } else {
@@ -223,33 +203,35 @@ public class Sistem extends supersuperclass{
             System.out.println("Tidak s");
             ts++;
         }
-        if(ini.getKondisi_CCTV().equalsIgnoreCase("baik")){
+        if(ini.getJumlah_CCTV_baik()>=ini.getJumlah_CCTV()){
             System.out.println("KondisiCCTV : s");
             s++;
         } else {
             System.out.println("Tidak s");
             ts++;
         }
-        if(ini.getPosisi_CCTV().equalsIgnoreCase("depanbelakang")){
+        if(ini.getJumlah_posisi_CCTV().equalsIgnoreCase("depanbelakang")){
             System.out.println("PosisiCCTV : s");
             s++;
         } else {
             System.out.println("Tidak s");
             ts++;
         }
-       a.hasil();
-     
-        return s;
+//       a.hasil();
+     ss=ss+s;
+        return ss;
     }
+    
     @Override
     void persentaseKondisiSarana(){
-         int total = s*5;
+         int total = 5;
         System.out.println("persentase KOndisi Sarana : "+total+"%");
         System.out.println("======================================");
         System.out.println("::Anda Masuk CheckKondisiLingkungan::");
        
     }
     int CheckKondisiLingkungan() {
+        int s = 0;
         a.input_lingkungan_ruang_kelas();
         ini= a.getruang();
         int kon;
@@ -298,16 +280,16 @@ public class Sistem extends supersuperclass{
         }
         return s;
     }
-    @Override
-    void persentaseKondisiLingkungan(){
-        int total = s*20;
-        System.out.println("persentase KOndisi Lingkungan : "+total+"%");
-        System.out.println("::Anda Masuk CheckKondisiKebersihan::");
-        
-    }
+//    @Override
+//    void persentaseKondisiLingkungan(){
+//        int  total = s*20;
+//        System.out.println("persentase KOndisi Lingkungan : "+total+"%");
+//        System.out.println("::Anda Masuk CheckKondisiKebersihan::");
+//        
+//    }
     
     int CheckKondisiKebersihan() {
-        int kon;
+        int kon , s = 0;
         if ("Lancar".equalsIgnoreCase(ini.getSirkulasi_udara())) {
             System.out.println("SirkulasiUdara : Lancar");
             s++;
@@ -352,13 +334,13 @@ public class Sistem extends supersuperclass{
     }
     @Override
     void persentaseKondisiKebersihan(){
-    int total = s*25;
+    int total = 25;
     System.out.println("persentase Kondisi Kebersihan : "+total+"%");
     System.out.println("::Anda Masuk CheckKondisiKenyamanan::");
     }
   
     int CheckKondisiKenyamanan() {
-        int kon;
+        int kon , s=0;
         /* if (!"s".equalsIgnoreCase(ini.getKebisingan())) {
         System.out.println("Tidak s");
         ts++;
@@ -398,13 +380,13 @@ public class Sistem extends supersuperclass{
     }
     @Override
     void persentaseKenyamanan(){
-     int total = s*25;
+     int total = 25;
     System.out.println("persentase Kondisi Kenyamanan : "+total+"%");
     System.out.println("::Anda Masuk CheckKondisiKeamanan::");
     }
 
     int CheckKondisiKeamanan() {
-        int kon;
+        int kon , s=0;
         if ("s".equalsIgnoreCase(ini.getKekokohan())) {
             System.out.println("Kekokohan : s");
             s++;
@@ -429,16 +411,31 @@ public class Sistem extends supersuperclass{
         }  
         return s;
     }
-    @Override
-    void persentaseKeamanan(){
-    double total = s*33.3;
-    System.out.println("persentase Kondisi Kenyamanan : "+total+"%");
-   
-    }
+//    @Override
+//    void persentaseKeamanan(){
+//    double total = s*33.3;
+//    System.out.println("persentase Kondisi Kenyamanan : "+total+"%");
+//   
+//    }
+
+//    @Override
+//    void input_identitas_ruang_kelas() {
+//       
+//    }
 
     @Override
     void input_identitas_ruang_kelas() {
-       
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    void persentaseKondisiLingkungan() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    void persentaseKeamanan() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
