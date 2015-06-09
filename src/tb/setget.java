@@ -644,7 +644,7 @@ public class setget {
         setKondisi_pintu(kondisi_pintu);
         setKondisi_jendela(kondisi_jendela);
     }
-   setget (String sirkulasi_udara, int pencahayaan, int kelembapan, int suhu){
+    setget (String sirkulasi_udara, int pencahayaan, int kelembapan, int suhu){
         setSirkulasi_udara(sirkulasi_udara);
         setPencahayaan(pencahayaan);
         setKelembapan(kelembapan);
