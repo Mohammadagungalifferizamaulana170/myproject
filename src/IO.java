@@ -297,10 +297,6 @@ public class IO extends supersuperclass implements out {
     void persentaseKeamanan() {
      }
 
-    void hasil() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
    }
 
 
